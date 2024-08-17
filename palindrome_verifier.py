@@ -2,25 +2,30 @@
 
 s = 'rotator'
 
-def palindrome_verifier(s):
-
+def string_inverter(s):
     # Inversion of the string
     inverted = ""
-
+    
     for i in range(len(s) - 1, -1, -1):
         inverted += s[i]
 
     return inverted
 
-inverted_string = palindrome_verifier(s)
+inverted_string = string_inverter(s)
 print(inverted_string)
 print(s)
 if inverted_string == s:
-    print('It is a palindrome')
+    print(f'The word {s} is a palindrome')
 else:
-    print('Not a palindrome')
+    print(f'The word {s} is not a palindrome')
 
 
-# Pending to develop it with multi-word palindromes. 'anita lava la tina, for example'
+# Palindrome verification through slicing
+def slice_palindrome_verifier(s):
+    if s[:] == s[::-1]:
+        print(f'The string {s} is a palindrome')
+    else:
+        print(f'The string {s} is not a palindrome')
 
+slice_palindrome_verifier(s)
 
